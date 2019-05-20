@@ -1,16 +1,19 @@
 html{
 	font-family: 'Quicksand', sans-serif;
 }
+body{
+	background: #EEF2F5;
+}
 .elec-data{
 	border-radius: 3px;
 	padding: 10px 10px 0;
-	color: #F7F7F8;
+	color: #333;
 	font-weight: 100;
-	/*width: 25%;*/
+	box-shadow: 0 2px 7px rgba(0,0,0,0.2);
 	margin: 50px auto;
-	height: 414px;
+	height: 424px;
 	overflow-y: scroll;
-	background-color: #ff3066;
+	background-color: #FFFFFF ;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -29,8 +32,9 @@ html{
 	border-bottom: 1px solid #EDF1F5;
 }
 .elec-data header h6{
-	font-size: 28px;
-    font-weight: 400;
+	font-size: 26px;
+	color: #FD397A;
+    font-weight: 600;
 } 
 .elec-data header .right p{
 	margin-bottom: 0px !important;
@@ -41,15 +45,19 @@ html{
 }
 .elec-data .main .left p{
 	margin-bottom: 0px;
+	font-weight: 400;
 }
 .elec-data .main .left p:first-child{
 	letter-spacing: 1px;
+	color: black;
 }
 .elec-data .main .left .box{
 	height: 40px;
 	width: 60px;
-	background-color: #273244;
+	background-color: #7381EB;
 	padding: 5px;
+	color: #fff;
+	font-weight: 400;
 	border-radius: 3px;
 	text-align: center;
 }
@@ -57,15 +65,16 @@ html{
 	padding: 0px 20px;
 	text-align: center;
 	height: 65px;
-	border-left: 1px dashed #AAD4F5; 
+	border-left: 2px dashed #5b6be8; 
 
 }
 .fnt-18{
 	font-size: 18px;
 }
 .locations:hover{
-	background-color: #273244;
+	background-color: #f2f2f2;
+	
 }
 .locations:hover > .left div.box{
-	background-color: #ff3066;
+	background-color: #5B6BE8;
 }
