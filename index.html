@@ -6,11 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- googlefont -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<!-- slick -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+
 
 </head>
 <body>
 <div class="container">
-	<div class="row">
+		<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4 col-sm-6 col-xs-12">
 			<section class="elec-data">
@@ -28,7 +32,6 @@
 		</div>
 	</div>
 </div>	
-<button onclick="sc(0,50)">click</button>
 
 <script type="text/javascript">
 	var data = [{
@@ -64,6 +67,14 @@
 		box3 : "i",
 		time : "04:10"
 	},{
+		location : "nehru place",
+		address : "nehru place gol market after parking",
+		trans : "T2",
+		box1 : "e",
+		box2 : "s",
+		box3 : "i",
+		time : "04:10"
+	},{
 		location : "shaheen bagh",
 		address : "mata sundri road",
 		trans : "T1",
@@ -87,26 +98,26 @@
 		box2 : "u",
 		box3 : "j",
 		time : "12:45"
-	},]
+	}];
 	var main = document.querySelector(".main");
 	function show(data){
-		var p;
+		let p;
 		data.forEach(function(i,index){
-		p += `<div class="locations d-flex justify-content-between">
-			<div class="left">
-				<p class=" text-uppercase fnt-18">${data[index].location}</p>
-				<p>${data[index].address}</p>
-				<div class="d-flex">
-					<div class="box ml-2 mt-1"><span>${data[index].box1}</span></div>
-					<div class="box ml-2 mt-1"><span>${data[index].box2}</span></div>
-					<div class="box ml-2 mt-1"><span>${data[index].box3}</span></div>
+		p+=`<div class="locations d-flex justify-content-between">
+				<div class="left">
+					<p class=" text-uppercase fnt-18">${data[index].location}</p>
+					<p>${data[index].address}</p>
+					<div class="d-flex">
+						<div class="box ml-2 mt-1"><span>${data[index].box1}</span></div>
+						<div class="box ml-2 mt-1"><span>${data[index].box2}</span></div>
+						<div class="box ml-2 mt-1"><span>${data[index].box3}</span></div>
+					</div>
 				</div>
-			</div>
-			<div class="right  mt-2">
-				<p class="fnt-18 font-weight-bold">${data[index].trans}</p>
-				<span>${data[index].time}</span>
-			</div>
-		</div>`;
+				<div class="right  mt-2">
+					<p class="fnt-18 font-weight-bold">${data[index].trans}</p>
+					<span>${data[index].time}</span>
+				</div>
+			</div>`;
 		});
 		main.innerHTML = p;
 	};
@@ -116,19 +127,29 @@
 		var fil = data.filter(v=> {return v.trans == t} );
 		show(fil);
 	}
-	function sc(x,y){
-		console.log("asd");
-		window.scrollBy({ 
-		  top: x, // could be negative value
-		  left: y, 
-		  behavior: 'smooth' 
-		});
-	}
-	// sc();
-
 </script>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" ></script>
+<script type="text/javascript">
+	function slide(){
+	$(document).ready(function(){
+			$('.main').slick({
+			  slidesToShow: 3,
+			  vertical : true,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  arrows : false,
+			  autoplaySpeed: 2000,
+			});
+		});
+	}
+	slide();
+	
+</script>
 </body>
 </html>
