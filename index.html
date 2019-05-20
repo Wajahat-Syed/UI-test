@@ -15,15 +15,25 @@
 <body>
 <div class="container">
 		<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4 col-sm-6 col-xs-12">
+		<!-- <div class="col-md-3 col-sm-1"></div> -->
+		<div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-12">
 			<section class="elec-data">
 				<header class="d-flex justify-content-between">
 					<h6>Critical alert</h6>
 					<div class="right">
 						<p>Last six hours data</p>
-						<input type="radio" name="trans" value="T1" onchange="filterData(this.value)"> T1
-						<input class="ml-4" type="radio" name="trans" value="T2" onchange="filterData(this.value)"> T2
+						<div class="radios d-flex">
+							<div class="custom-control custom-radio">
+							  <input type="radio" id="customRadio1"  checked="" name="trans" value="T1" onchange="filterData(this.value)" class="custom-control-input">
+							  <label class="custom-control-label font-weight-bold" for="customRadio1">T1</label>
+							</div>
+							<div class="custom-control custom-radio ml-2">
+							  <input type="radio" id="customRadio2"  name="trans" value="T2" onchange="filterData(this.value)" class="custom-control-input">
+							  <label class="custom-control-label font-weight-bold" for="customRadio2">T2</label>
+							</div>
+						</div>
+						<!-- <input type="radio" name="trans" value="T1" onchange="filterData(this.value)"> T1
+						<input class="ml-4" type="radio" name="trans" value="T2" onchange="filterData(this.value)"> T2 -->
 					</div>
 				</header>
 				<div class="main">
@@ -99,6 +109,8 @@
 		box3 : "j",
 		time : "12:45"
 	}];
+	var radio1 = documen.querySelector("#customRadio1");
+	var radio2 = documen.querySelector("#customRadio2");
 	var main = document.querySelector(".main");
 	function show(data){
 		let p;
@@ -149,7 +161,12 @@
 		});
 	}
 	slide();
-	
+	if(radio1.checked == true){
+		console.log("a");
+	} else if(radio2.checked == true){
+		
+		console.log("b");
+	}
 </script>
 </body>
 </html>
